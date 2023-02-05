@@ -2,22 +2,22 @@
 import sys
 
 def factors(n):
-        result = []
-        for i in range(2, int(n**0.5)+1):
-                if n % i == 0:
-                        result.append((i, n//i))
-			break
-        return result
+    result = []
+    for i in range(2, int(n**0.5)+1):
+        if n % i == 0:
+            result.append((i, n//i))
+            break
+    return result
 
 def main():
-        filename = sys.argv[1]
-        with open(filename, 'r') as f:
-                lines = f.readlines()
-                for line in lines:
-                        n = int(line.strip())
-                        factorizations = factors(n)
-                        for factorization in factorizations:
-                                print(f"{n}={factorization[0]}*{factorization[1]}")
+    filename = sys.argv[1]
+    with open(filename, 'r') as f:
+        lines = f.readlines()
+        for line in lines:
+            n = int(line.strip())
+            factorizations = factors(n)
+            for factorization in factorizations:
+                print(f"{n}={factorization[0]}*{factorization[1]}")
 
 if __name__ == '__main__':
-        main()
+    main()
